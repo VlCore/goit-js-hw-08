@@ -7,9 +7,12 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-image: linear-gradient(to right, #d53369, #cbad6d);
   color: #212121;
   line-height: 1.5;
+}
+body a {
+  color: #cbad6d;
 }
 
 img {
