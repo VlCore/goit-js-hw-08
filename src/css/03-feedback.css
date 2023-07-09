@@ -3,12 +3,13 @@
   flex-direction: column;
   max-width: 480px;
   padding: 12px;
-  background-color: #fff;
+  background: linear-gradient(to right, #800080, #ffc0cb);
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
 
 .feedback-form label {
+  color: White;
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
@@ -18,10 +19,13 @@
   padding: 8px 12px;
   font: inherit;
   cursor: pointer;
+  background-color: #800080;
+  color: white;
 }
 
 input,
 textarea {
+  background: #ffc0cb;
   padding: 8px;
   font: inherit;
 }
