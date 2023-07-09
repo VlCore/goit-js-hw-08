@@ -1,0 +1,2 @@
+.feedback-form{max-width:480px;background:linear-gradient(90deg,purple,pink);border:1px solid rgba(0,0,0,.12);border-radius:4px;flex-direction:column;padding:12px;display:flex}.feedback-form label{color:#fff;flex-direction:column;margin-bottom:16px;display:flex}.feedback-form button{font:inherit;cursor:pointer;color:#fff;background-color:purple;padding:8px 12px}input,textarea{font:inherit;background:pink;padding:8px}textarea{resize:none}
+/*# sourceMappingURL=03-feedback.b6857316.css.map */
