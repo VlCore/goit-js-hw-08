@@ -1,9 +1,5 @@
 import throttle from 'lodash.throttle'
 
-window._ = {
-    throttle: throttle
-  };
-
 const formState = {
     email: '',
     message: '',
@@ -42,9 +38,8 @@ function clearForm() {
 
 function handleSubmit(evt) {
     evt.preventDefault()
-    const feedbackForm = document.querySelector('.feedback-form')
-    const emailInput = feedbackForm.querySelector('input[name="email"]')
-    const messageInput = feedbackForm.querySelector('textarea[name="message"]')
+    const emailInput = evt.target.querySelector('input[name="email"]')
+    const messageInput = evt.target.querySelector('textarea[name="message"]')
     const formState = {
         email: emailInput.value,
         message: messageInput.value,
@@ -57,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fillForm()
 })
 
-document.addEventListener('input', _.throttle(saveFormState, 500))
+document.addEventListener('input', throttle(saveFormState, 500))
 
 const form = document.querySelector('.feedback-form');
 form.addEventListener('submit', handleSubmit)
