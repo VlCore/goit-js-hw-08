@@ -10,10 +10,10 @@ const saveCurrentTime = function(currentTime) {
 
 const saveCurrentTimeThrottle = throttle(saveCurrentTime, 1000)
 
-player.on('timeupdate', function(data) {
+player.on('timeupdate', throttle(function(data) {
     const currentTime = data.seconds.toFixed()
-    saveCurrentTimeThrottle(currentTime)
-})
+    saveCurrentTime(currentTime)
+}, 1000))
 
 window.addEventListener('DOMContentLoaded', function() {
     const currentTime = this.localStorage.getItem('videoplayer-current-time')
