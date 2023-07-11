@@ -5,8 +5,8 @@ const formState = {
   message: '',
 };
 
-function saveFormState(evt) {
-  const feedbackForm = evt.target;
+function saveFormState() {
+  const feedbackForm = document.querySelector('.feedback-form');
   const emailInput = feedbackForm.querySelector('input[name="email"]');
   const messageInput = feedbackForm.querySelector('textarea[name="message"]');
   formState.email = emailInput.value;
@@ -26,34 +26,26 @@ function fillForm() {
   }
 }
 
-function clearForm(evt) {
-  const feedbackForm = evt.target;
-  const emailInput = feedbackForm.querySelector('input[name="email"]');
-  const messageInput = feedbackForm.querySelector('textarea[name="message"]');
+function clearForm() {
+  const feedbackForm = document.querySelector('.feedback-form');
+  // const emailInput = feedbackForm.querySelector('input[name="email"]');
+  // const messageInput = feedbackForm.querySelector('textarea[name="message"]');
+  // emailInput.value = '';
+  // messageInput.value = '';
   feedbackForm.reset();
-  emailInput.value = '';
-  messageInput.value = '';
   localStorage.removeItem('feedback-form-state');
 }
 
 function handleSubmit(evt) {
   evt.preventDefault();
-  const feedbackForm = evt.target;
-  const emailInput = feedbackForm.querySelector('input[name="email"]');
-  const messageInput = feedbackForm.querySelector('textarea[name="message"]');
-  const formState = {
-    email: emailInput.value,
-    message: messageInput.value,
-  };
   console.log(formState);
-  clearForm(evt);
+  clearForm();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   fillForm();
 });
 
-document.addEventListener('input', throttle(saveFormState, 500));
-
 const form = document.querySelector('.feedback-form');
 form.addEventListener('submit', handleSubmit);
+form.addEventListener('input', throttle(saveFormState, 500));
