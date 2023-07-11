@@ -8,7 +8,7 @@ const saveCurrentTime = function(currentTime) {
     localStorage.setItem('videoplayer-current-time', currentTime)
 }
 
-const saveCurrentTimeThrottle = throttle(saveCurrentTime, 1000)
+// const saveCurrentTimeThrottle = throttle(saveCurrentTime, 1000)
 
 player.on('timeupdate', throttle(function(data) {
     const currentTime = data.seconds.toFixed()
